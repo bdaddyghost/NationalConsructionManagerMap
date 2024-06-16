@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Construction Managers Map&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/leaflet/dist/leaflet.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#map { height: 600px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="map"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var map = L.map('map').setView([37.0902, -95.7129], 4);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>maxZoom: 19,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>attribution: '&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}).addTo(map);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>var locations = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Greenwich, Connecticut": [41.0262, -73.6282],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Westport, Connecticut": [41.1415, -73.3579],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Bethesda, Maryland": [38.9847, -77.0947],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Atlanta, Georgia": [33.7490, -84.3880],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Raleigh, North Carolina": [35.7796, -78.6382],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Tampa, Florida": [27.9506, -82.4572],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Boca Raton, Florida": [26.3683, -80.1289],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Jacksonville, Florida": [30.3322, -81.6557],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Houston, Texas": [29.7604, -95.3698],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Chicago, Illinois": [41.8781, -87.6298],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Daly City, California": [37.6879, -122.4702],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Walnut Creek, California": [37.9101, -122.0652],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Los Angeles, California": [34.0522, -118.2437],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Solana Beach, California": [32.9912, -117.2713]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>var employees = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Greenwich, Connecticut": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Jay Orleman: Tenant Coordinator 1",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Andy Albrecht: Senior Project Manager 3",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Dino DeLaurentiis: Senior Tenant Coordinator 3"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Westport, Connecticut": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Michael Lai: Senior Project Manager 1"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Bethesda, Maryland": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"John Fitzpatrick: VP Project Management 4",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Seema Bali: Project Manager 21",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Sarah Espnioza: Contract Administrator 9",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Adil Saltani: Senior Tenant Coordinator 1",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Kevin Lyons: Tenant Coordinator 1",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Andrew Altman: Senior Project Manager 27"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Atlanta, Georgia": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Scott Siebert: Project Manager 25"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Raleigh, North Carolina": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Max Piechottka: Associate Tenant Coordinator 3",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Adam Jolly: Senior Project Manager 26"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Tampa, Florida": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Courtney Cadiz: Tenant Coordinator 3"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Boca Raton, Florida": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Paula Henrique: Senior Project Manager 29",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Lissette Bajra: Contract Administrator 10",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Valentina Perez: Senior Tenant Coordinator 1"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Jacksonville, Florida": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Chris Ruen: Senior Project Manager 31"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Houston, Texas": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Kane Griffen: Tenant Coordinator 2",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Jaimie Latshaw: Contract Administrator 24",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Jon Beer: Senior Project Manager 19"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Chicago, Illinois": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Jose Lopez: Senior Project Manager 21"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Daly City, California": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Todd Dewell: Senior Project Manager 35"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Walnut Creek, California": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Celia McCallson: Contract Administrator 5"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Los Angeles, California": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Shane Fozdar: Senior Project Manager 2",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Matthew Glover: Tenant Coordinator 2",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Steve Felderman: VP Project Management 2"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Solana Beach, California": [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"Jena Stucker: Project Manager 26"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (var location in locations) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var popupContent = location + "&lt;br&gt;" + employees[location].join("&lt;br&gt;");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>L.marker(locations[location]).addTo(map)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.bindPopup(popupContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
